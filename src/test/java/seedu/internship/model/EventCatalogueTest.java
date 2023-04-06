@@ -33,7 +33,7 @@ public class EventCatalogueTest {
 
     @Test
     public void constructor() {
-        assertEquals(Collections.emptyList(), eventCatalogue.getEventList());
+        Assertions.assertEquals(Collections.emptyList(), eventCatalogue.getEventList());
     }
 
 
@@ -46,7 +46,7 @@ public class EventCatalogueTest {
     public void resetData_withValidReadOnlyEventCatalogue_replacesData() {
         EventCatalogue newData = getTypicalEventCatalogue();
         eventCatalogue.resetData(newData);
-        assertEquals(newData, eventCatalogue);
+        Assertions.assertEquals(newData, eventCatalogue);
     }
 
     @Test
@@ -97,7 +97,6 @@ public class EventCatalogueTest {
     @Test
     public void hasEvent_eventNotInEventCatalogue_returnsFalse() {
         assertFalse(eventCatalogue.hasEvent(EM11));
-
     }
 
     @Test
@@ -106,7 +105,7 @@ public class EventCatalogueTest {
         assertTrue(eventCatalogue.hasEvent(EM21));
 
         eventCatalogue.addEvent(EM11);
-        assertTrue(eventCatalogue.hasEvent(EM11));
+        Assertions.assertTrue(eventCatalogue.hasEvent(EM11));
     }
 
     @Test
