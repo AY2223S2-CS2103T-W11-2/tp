@@ -20,6 +20,14 @@ public class Datapoint {
         this.value = value;
     }
 
+    /**
+     * Creates a Datapoint instance with default value of 0.
+     * @param name Name of Datapoint.
+     */
+    public Datapoint(String name) {
+        this(name, 0);
+    }
+
     public String getName() {
         return name;
     }
@@ -32,6 +40,10 @@ public class Datapoint {
         return name + " " + value;
     }
 
+    /**
+     * Increases value of Datapoint by given amount.
+     * @param amount Integer amount to increase value by.
+     */
     public void incrementValue(int amount) {
         value += amount;
     }
